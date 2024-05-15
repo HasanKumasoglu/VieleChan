@@ -1,0 +1,154 @@
+.AnaKutu2 {
+    background-color: #333333;
+    width: 1850px;
+    height: 890px;
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+    background-image: url("mesajArakaPlan5.png.jpg");
+}
+
+.AnaKutu1ic {
+    background-color: #3e8e41;
+    margin: 10px;
+    padding: 20px;
+    width: 350px;
+    border-radius: 15px;
+    background-image: url("mesajArakaPlan5.png.jpg");
+
+}
+
+.AnaKutu2ic {
+    background-image: url("mesajArakaPlan.png");
+    background-color: dimgray;
+    margin: 10px;
+    padding: 20px;
+    width: 1450px;
+    border-radius: 15px;
+    border: 2px solid #cccccc;
+
+}
+
+.kutu1 {
+    height: 150px;
+    background-image: url("mesajArakaPlan.png");
+}
+
+.kutu2 {
+    height: 500px;
+    background-image: url("mesajArakaPlan.png");
+
+}
+
+.ickutu {
+    border: 2px solid #cccccc;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 30px;
+    background-color: dimgray;
+    opacity: 0.8;
+
+}
+
+.baglantiButton {
+
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background-color: #4CAF50;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    line-height: 26px;
+
+}
+
+.cikisButton {
+
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background-color: brown;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    line-height: 26px;
+    margin-left: 10px;
+
+}
+
+.ickutu p {
+    margin-bottom: 50px;
+    font-size: x-large;
+    color: white;
+}
+
+.mesajGirisi {
+    height: 50px;
+    width: 1280px;
+    white-space: nowrap;
+    border: none;
+    border-bottom: 1px solid #3e8e41;
+    display: inline-block;
+    background-color: #cccccc;
+
+}
+
+.gonderMesaj {
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background-color: #3e8e41;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    line-height: 26px;
+
+
+}
+
+.ahk {
+    margin-top: 780px;
+}
+
+.altBut {
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background-color: #008997;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    line-height: 26px;
+}
+
+.id2 {
+    background-image: url("mesajArakaPlan5.png.jpg");
+}
+
+#response p {
+    font-family: Monospace;
+    font-size: x-large;
+    color: white;
+    line-height: 1.5;
+}
+
+.inputxx{
+
+    background-color: dimgray;
+    height: 35px;
+    width: 210px;
+
+}

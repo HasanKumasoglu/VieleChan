@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Şifreyi Değiştirin</title>
+    <link rel="stylesheet" href="sifreDuzenleme.css">
+
+    <script>
+
+        function SifreYenile() {
+            var e_posta = document.getElementById("e_posta").value;
+            var sifre = document.getElementById("sifre").value;
+
+            if (e_posta.trim() === "" || sifre.trim() === "") {
+                alert("E-posta veya şifre boş bırakılamaz.");
+                return;
+            }
+
+            const parametre = {
+                e_posta: e_posta,
+                sifre: sifre
+            };
+
+            var request = new XMLHttpRequest();
+            request.open("PUT", "http://localhost:8080/kullanici/sifreDuzenle/" + e_posta, true);
+            request.setRequestHeader("Content-Type", "application/json");
+            request.onreadystatechange = function () {
+                if (request.readyState === XMLHttpRequest.DONE) {
+                    if (request.status === 200) {
+                        alert("Şifre Güncellendi");
+                        window.location.href= "chat.HTML.html";
+                    } else {
+                        alert("Güncellemede hata var " + request.status);
+                    }
+                }
+            };
+            request.send(JSON.stringify(parametre));
+        }
+
+
+        /*
+        function SifreYenile() {
+            var e_posta = document.getElementById("e_posta").value;
+            var sifre = "yeni_sifre"; // Örnek olarak
+
+            const parametre = {
+                e_posta: e_posta,
+                sifre: sifre
+            };
+
+            var request = new XMLHttpRequest();
+            request.open("PUT", "http://localhost:8080/kullanici/sifreDuzenle/" + e_posta, true);
+            request.setRequestHeader("Content-Type", "application/json");
+            request.onreadystatechange = function () {
+                if (request.readyState === XMLHttpRequest.DONE) {
+                    if (request.status === 200) {
+                        alert("Şifre Güncellendi");
+                    } else {
+                        alert("Güncellemede hata var " + request.status);
+                    }
+                }
+            };
+            request.send(JSON.stringify(parametre));
+        }
+
+         */
+
+
+        /*
+        function SifreYenile() {
+
+
+            const parametre = {
+
+                e_posta: e_posta,
+                sifre: sifre
+
+            };
+
+            var request= new XMLHttpRequest();
+            request.open("PUT", "http://localhost:8080/kullanici/sifreDuzenle/" + document.getElementById("e_posta").value , true)
+            request.setRequestHeader("Content-Type", "application/json");
+            request.onreadystatechange = function () {
+
+                if (request.readyState === XMLHttpRequest.DONE) {
+
+                    if (request.status === 200) {
+
+                        alert("Şifre Güncellendi")
+
+                    } else {
+
+                        alert("Güncellemede hata var " + request.status)
+
+                    }
+
+                }
+
+            };
+
+            request.send(JSON.stringify(parametre));
+
+        }
+
+         */
+
+        /*
+        function sifreYenile() {
+            var e_posta = document.getElementById("e_posta").value;
+
+            if (e_posta.trim() === "") {
+                alert("E-posta adresi boş bırakılamaz!");
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("PUT", "http://localhost:8080/kullanici/sifreDuzenl?e_posta=" + encodeURI(e_posta), true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response != null) {
+                            alert("Şifreniz yenilendi");
+                        } else {
+                            alert("E-posta hatalı");
+                        }
+                    } else {
+                        console.error("Sunucu hatası:", xhr.status);
+                        alert("Sunucu hatası: " + xhr.status);
+                    }
+                }
+            };
+
+            xhr.send();
+        }
+
+         */
+
+
+        /*
+
+        function sifreYenile() {
+            var e_posta = document.getElementById("e_posta").value;
+            //var sifre = document.getElementById("password").value;
+
+            if (e_posta.trim() === "" || sifre.trim() === "") {
+                alert("e_posta adı veya şifre boş bırakılamaz!");
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("PUT", "http://localhost:8080/kullanici/sifreDuzenl?e_posta=" + encodeURI(e_posta), true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response != null) {
+                            alert("Şifreniz yenilendi");
+                        } else {
+                            alert("e_posta hatalı");
+                        }
+                    } else {
+                        console.error("Sunucu hatası:", xhr.status);
+                        alert("Sunucu hatası: " + xhr.status);
+                    }
+                }
+            };
+
+            //var data = JSON.stringify({"e_posta": e_posta, "sifre": sifre});
+            xhr.send();
+
+        }
+
+        */
+
+
+        /*
+        function sifreYenile() {
+            var e_posta = document.getElementById("e_posta").value;
+            var sifre = document.getElementById("password").value;
+
+            if (e_posta.trim() === "" || sifre.trim() === "") {
+                alert("e_posta adı veya şifre boş bırakılamaz!");
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://localhost:8080/kullanici/sifreDuzenle?e_posta="  + encodeURI(e_posta) , true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response != null) {
+                            alert("Şifreniz yenilendi");
+                        } else {
+                            alert("e_posta hatalı");
+                        }
+                    } else {
+                        console.error("Sunucu hatası:", xhr.status);
+                        alert("Sunucu hatası: " + xhr.status);
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+
+
+         */
+    </script>
+
+</head>
+<body>
+
+<div class="container right-panel-active">
+    <div class="container__form container--signup" id="sifre12">
+        <form action="#" class="form" id="form1">
+            <h2 class="form__title">Yeni Şifrenizi yazın</h2>
+            <input type="email" placeholder="E-Posta" class="input" id="e_posta" />
+            <input type="password" placeholder="Yeni Şifre" class="input" id="sifre" />
+            <button class="btn" onclick="SifreYenile()" >Değiştir</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
